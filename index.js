@@ -10,16 +10,14 @@ function onRequestHandler() {
         // 3 = LOADING, esta cargando, es decir, esta recibiendola respuesta
         // 4 = DONE, se ha completado la operacion
         
-       
         const data = JSON.parse(this.response);
         console.log(data)
         const HTMLResponse = document.querySelector('#app')
-        const template = data.map(user => `<li>${user.name} ----****---- ${user.email}<li>`)
+        const template = data.map(user => `<li>${user.name} ----**mail**---- ${user.email}<li>`)
         HTMLResponse.innerHTML = `<ul>${template}<ul>`
-        console.log('hola mundo')
-
+        console.log('hola mundo');
     }
-}
+};
 
 xhr.addEventListener('load', onRequestHandler); // llamamos a la function para que se ejecute a travez de un escuchador de eventos 'addEvenListenr'
 xhr.open('GET', `${API_URL}/users`); // llamamos a la URL desde donde hacemos la peticion
