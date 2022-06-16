@@ -2,14 +2,17 @@ const API_URL = 'https://jsonplaceholder.typicode.com'
 
 var xhr = new XMLHttpRequest();
 
+
 function onRequestHandler() {
-    if (this.readyState === 4 && this.status === 200) { //recibe una respuesta y un codigo de respuesta sirve para controlar 
-        // 0 = UNSET, no se ha llamado al method open
-        // 1 = OPENED, se ha llamado al method open
-        // 2 = HEADER_RECEIVED, se esta llamando al method send()
-        // 3 = LOADING, esta cargando, es decir, esta recibiendola respuesta
-        // 4 = DONE, se ha completado la operacion
-        
+    const CODE_STATUS = {
+        UNSET: 0,
+        OPENED: 1,
+        HEADER_RECEIVED: 2,
+        LOADING: 3,
+        DONE: 4
+    };
+    
+    if (this.readyState === CODE_STATUS.DONE && this.status === 200) { //recibe una respuesta y un codigo de respuesta sirve para controlar 
         const data = JSON.parse(this.response);
         console.log(data)
         const HTMLResponse = document.querySelector('#app')
