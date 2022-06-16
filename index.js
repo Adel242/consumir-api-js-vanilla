@@ -2,7 +2,6 @@ const API_URL = 'https://jsonplaceholder.typicode.com'
 
 var xhr = new XMLHttpRequest();
 
-
 function onRequestHandler() {
     const CODE_STATUS = {
         UNSET: 0,
