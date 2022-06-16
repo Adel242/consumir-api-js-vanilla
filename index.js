@@ -17,7 +17,6 @@ function onRequestHandler() {
         const HTMLResponse = document.querySelector('#app')
         const template = data.map(user => `<li>${user.name} ----**mail**---- ${user.email}<li>`)
         HTMLResponse.innerHTML = `<ul>${template}<ul>`
-        console.log('hola mundo');
     }
 };
 
